@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Nave
+  - Trak_black
+  - Dardo
+  - Borda
+  - Inimigo
+  - Ataque
+  - Range
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: fundo1
+    uniqueID: 3619493459
+    locked: 0
+  - name: fundo2
+    uniqueID: 2778327647
+    locked: 0
+  - name: fundo3
+    uniqueID: 1948234553
+    locked: 0
+  - name: frente2
+    uniqueID: 4168916121
+    locked: 0
+  - name: frente1
+    uniqueID: 3535071591
+    locked: 0
+  - name: frente0
+    uniqueID: 4157893387
+    locked: 0
