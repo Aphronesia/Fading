@@ -1,1 +1,2 @@
 # Fading
+Fading é um jogo de aventura 2D feito no motor gráfio Unity. Em um futuro quase pós-apocaliptico, o jogo coloca o jogador na pele de engenheiro responsável pela criação de uma maquina que fornecia energia para o mundo inteiro, mas que em dado momento essa deu pane e começou a destruir tudo, acabando com os recursos da terra. Você então é mandado ir até a máquina corrigir o problema, mas terá que enfrentar diversos seres criados pela máquina após a pane que irão atrapalhar o seu caminho
