@@ -16,7 +16,6 @@ public class Trek_RedBall : MonoBehaviour
 
     void Update()
     {
-        rb2d.velocity = new Vector2(0, -veloc);
         if (transform.position.y  < -16f){
         Destroy(this.gameObject);
         }
@@ -30,5 +29,8 @@ public class Trek_RedBall : MonoBehaviour
                 Physics2D.IgnoreCollision(GetComponent<Collider2D>(), borda.GetComponent<BoxCollider2D>(), true);
             }
         }
+    }
+    private void FixedUpdate() {
+        rb2d.velocity = new Vector2(0, -veloc);
     }
 }

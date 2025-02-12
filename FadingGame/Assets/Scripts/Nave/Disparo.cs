@@ -16,15 +16,15 @@ public class Disparo : MonoBehaviour
     //durante o jogo (após primeiro frame)
     void Update()
     {
-        transform.Translate(Vector3.right * velocdisparo * Time.deltaTime);
-
-
         // pra fazer ele sumir dps (aqui uma base pra vc ferle)
         time += Time.deltaTime;
         if ( time > 1.0f){Destroy(this.gameObject);}
         if ( transform.position.x  > 46.5f) {
             Destroy(this.gameObject);
         }
+    }
+    private void FixedUpdate() {
+        transform.Translate(Vector3.right * velocdisparo * Time.deltaTime);
     }
     // quando acontecer colisão
     private void OnTriggerEnter2D(Collider2D other)

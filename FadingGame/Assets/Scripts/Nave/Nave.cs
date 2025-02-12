@@ -5,33 +5,29 @@ using UnityEngine.Jobs;
 public class Nave : MonoBehaviour
 {
     // variaveis da movmentacao
-    public float velocidade = 0.0f;
-    public float entradaHorizontal;
-    public float entradaVertical;
+    public float velocidade, entradaHorizontal, entradaVertical;
     // caixa de selecao pra colocar o prefb do dardo
     public GameObject Dardo;
     //variaveis do dardo
-    public float tempoDeDisparo = 0.3f ;
-    public float podeDisparar = 0.0f ;
+    public float tempoDeDisparo, podeDisparar;
     //VIDA 
     public int navePorcentagem = 100;
     //primeiro frame
     void Start()
     {
         Debug.Log("Start de " + this.name);
-        //atribui a variavel "velocidade" o valor 50
-        velocidade =30.0f;        
     }
     //quando o jogo estiver acontecendo (todos os frames apos o primero)
-    void Update()
-    {
+    private void FixedUpdate() {
         //atribui a variavel o valor "1" se as teclas "Horizontal" forem pressionadas
         entradaHorizontal = Input.GetAxis("Horizontal");
         //atribui a variavel o valor "1" se as teclas "Vertical" forem pressionadas
         entradaVertical = Input.GetAxis("Vertical");
         //Cria um void pra essas duas variaveis
         Mover(entradaHorizontal, entradaVertical);
-
+    }
+    void Update()
+    {
         //se botao esquerdo do mouse ("0") for apertado
         if (Input.GetMouseButtonDown(0)){
             //se Time.time for menor que pode disparar

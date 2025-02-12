@@ -18,7 +18,6 @@ public class TrekAi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb2d.velocity = new Vector2(0, -veloc);
         if (transform.position.y  < -16f){
         Destroy(this.gameObject);
         }
@@ -34,7 +33,7 @@ public class TrekAi : MonoBehaviour
             }
         }
     }
-    
-
-
+    private void FixedUpdate() {
+        rb2d.velocity = new Vector2(0, -veloc);
+    }
 }

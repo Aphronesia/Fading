@@ -43,8 +43,7 @@ public class MonstroVerdeIA : MonoBehaviour
         transform.localScale = escala;
     }
     //durante o jogo (após primeiro frame)
-    void Update()
-    {
+    private void FixedUpdate() {
         //separa o codigo de seguir
         Seguir();
     }
