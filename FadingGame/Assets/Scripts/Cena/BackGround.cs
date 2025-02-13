@@ -14,7 +14,6 @@ public class BackGround : MonoBehaviour
     {
        posicaoInicial = transform.position;
     }
-
     // Update is called once per frame
     private void FixedUpdate()
     {
