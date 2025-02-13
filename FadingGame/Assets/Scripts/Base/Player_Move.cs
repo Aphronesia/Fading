@@ -9,6 +9,8 @@ public class Player_Move : MonoBehaviour
     private bool isGrounded;
     private Rigidbody2D rig;
 
+    public GameObject ferlemou;
+
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
