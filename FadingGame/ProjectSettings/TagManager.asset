@@ -11,6 +11,7 @@ TagManager:
   - Inimigo
   - Ataque
   - Range
+  - Ground
   layers:
   - Default
   - TransparentFX

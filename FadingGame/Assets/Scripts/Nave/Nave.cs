@@ -60,7 +60,7 @@ public class Nave : MonoBehaviour
         }
     }
 
-    //Void Mover criado em Void Update
+    //Void Mover criado em Void FixedUpdate
     void Mover(float entradaHorizontal, float entradaVertical)
     {
         //cria o vector3 "movimento", atribui a x "entradaHorizontal", a y "entradaVertical", a z 0
