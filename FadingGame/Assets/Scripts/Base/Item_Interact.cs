@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Item_Interact : MonoBehaviour
+{
+    [SerializeField]
+    private GameObject ButtonPress;
+    private void Start() {
+        ButtonPress = transform.Find("Button-to-press")?.gameObject;
+        if (ButtonPress == null){
+            Debug.Log("filho não achado");
+        }
+        else{
+            ButtonPress.SetActive(false);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Player")){
+            ButtonPress.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Player")){
+            ButtonPress.SetActive(false);
+        }
+    }
+}
