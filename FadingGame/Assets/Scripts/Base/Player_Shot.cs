@@ -5,10 +5,13 @@ using UnityEngine.InputSystem;
 
 public class Player_Shot : MonoBehaviour
 {
-    [SerializeField]
+    [Header("Atributos do disparo")]
+    [SerializeField, Tooltip("Objeto a ser instanciado")]
     private GameObject shot;
-    [SerializeField]
-    private float canShoot, countdown;
+    [SerializeField, Tooltip("Boleana que permiti o disparo")]
+    private float canShoot;
+    [SerializeField, Tooltip("tempo entre um disparo ao outro")]
+     private float countdown;
 
     private PlayerInputActions playerControls;
     private InputAction fire;

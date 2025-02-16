@@ -5,8 +5,12 @@ using UnityEngine.InputSystem;
 
 public class Player_Move : MonoBehaviour
 {
-    [SerializeField]
-    private float speed, jumpForce;
+    [Header("Atributos do Player")]
+    [SerializeField, Tooltip("Velocidade de movimento horizontal")]
+    private float speed;
+    [SerializeField, Tooltip("Força do pulo")]
+    private float jumpForce;
+
     private bool isGrounded;
     private Rigidbody2D rig;
     private Animator anim;
@@ -16,11 +20,10 @@ public class Player_Move : MonoBehaviour
     private InputAction jump;
 
     Vector2 moveDirection = Vector2.zero;
-    private void Awake() {
+    private void Awake(){
         playerControls = new PlayerInputActions();
     }
-    private void OnEnable()
-    {
+    private void OnEnable(){
         move = playerControls.Player.Move;
         move.Enable();
 
@@ -28,13 +31,11 @@ public class Player_Move : MonoBehaviour
         jump.Enable();
         jump.performed += Jump;
     }
-    private void OnDesable()
-    {
+    private void OnDesable(){
         move.Disable();
         jump.Disable();
     }
-    private void Start()
-    {
+    private void Start(){
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         anim.SetBool("Walk", false);
@@ -67,14 +68,12 @@ public class Player_Move : MonoBehaviour
             isGrounded = false;
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
+    void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("Ground")){
             isGrounded = true;
         }
     }
-    void OnCollisionExit2D(Collision2D collision)
-    {
+    void OnCollisionExit2D(Collision2D collision){
         if (collision.gameObject.CompareTag("Ground")){
             isGrounded = false;
         }
