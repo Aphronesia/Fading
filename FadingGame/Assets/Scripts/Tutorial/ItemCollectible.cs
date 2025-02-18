@@ -34,6 +34,9 @@ public class ItemCollectible : MonoBehaviour, IInteractable
             collectibleItem.SetActive(false);
             collected = true;
         }
+        else {
+            Debug.Log("já coletado");
+        }
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")){
