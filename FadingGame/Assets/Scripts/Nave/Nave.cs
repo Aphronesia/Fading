@@ -18,7 +18,8 @@ public class Nave : MonoBehaviour
         Debug.Log("Start de " + this.name);
     }
     //quando o jogo estiver acontecendo (todos os frames apos o primero)
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         //atribui a variavel o valor "1" se as teclas "Horizontal" forem pressionadas
         entradaHorizontal = Input.GetAxis("Horizontal");
         //atribui a variavel o valor "1" se as teclas "Vertical" forem pressionadas
@@ -29,9 +30,11 @@ public class Nave : MonoBehaviour
     void Update()
     {
         //se botao esquerdo do mouse ("0") for apertado
-        if (Input.GetMouseButtonDown(0)){
+        if (Input.GetMouseButtonDown(0))
+        {
             //se Time.time for menor que pode disparar
-            if ( Time.time > podeDisparar ){
+            if (Time.time > podeDisparar)
+            {
                 //atribui ao Vector3 "mousePosicao" a posicao do mouse na tela
                 Vector3 mousePosicao = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 //atribui ao z do vector3 "mousePosicao" o valor de 0
@@ -45,16 +48,17 @@ public class Nave : MonoBehaviour
                 Quaternion rotacaoDesejada = Quaternion.Euler(0f, 0f, anguloDeg);
 
                 //Cria o objeto "Dardo" na mesma posicao da nave, e com a rotacao no valor da Quaternion "rotacaoDesejada"
-                Instantiate(Dardo,transform.position + new Vector3(0,0,0), rotacaoDesejada);
+                Instantiate(Dardo, transform.position + new Vector3(0, 0, 0), rotacaoDesejada);
                 //atribui ao valor "podeDisparar" Time.time + tempodeDisparo
-                podeDisparar = Time.time + tempoDeDisparo ;
+                podeDisparar = Time.time + tempoDeDisparo;
             }
         }
         Rotacao();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if ( other.tag == "Ataque"){
+        if (other.tag == "Ataque")
+        {
             Destroy(other.gameObject);
             DanoSimples();
         }
@@ -64,7 +68,7 @@ public class Nave : MonoBehaviour
     void Mover(float entradaHorizontal, float entradaVertical)
     {
         //cria o vector3 "movimento", atribui a x "entradaHorizontal", a y "entradaVertical", a z 0
-        Vector3 movimento = new Vector3 (entradaHorizontal, entradaVertical, 0f);
+        Vector3 movimento = new Vector3(entradaHorizontal, entradaVertical, 0f);
         //normaliza os valores de movimento
         movimento.Normalize();
         //cria o vector3 "novaPosicao, atrivui a ele a posicao da nave, mais movimento multiplicado pela velocidade e pelo tempo
@@ -72,29 +76,29 @@ public class Nave : MonoBehaviour
         //No componente Rigidbody2D, usa o metodo MovePosition e da a ele o valor de "novaPosicao"
         GetComponent<Rigidbody2D>().MovePosition(novaPosicao);
     }
-    void Rotacao(){
-        //se "A" for presionado
+    void Rotacao()
+    {
         Quaternion rotacaoWS0 = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         Quaternion rotacaoW = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 30);
-        if (Input.GetKey(KeyCode.W)){transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoW, 10.0f * Time.deltaTime);}
-        else {transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoWS0, 10.0f * Time.deltaTime);}
-
+        if (Input.GetKey(KeyCode.W)){ 
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoW, 10.0f * Time.deltaTime); 
+        }
+        else{ 
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoWS0, 10.0f * Time.deltaTime); 
+        }
         Quaternion rotacaoS = Quaternion.Euler(0, transform.rotation.eulerAngles.y, -30);
-        if (Input.GetKey(KeyCode.S)){transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoS, 10.0f * Time.deltaTime);}
-        
-        /*if (Input.GetKeyDown(KeyCode.A)){transform.rotation = Quaternion.Euler(0, 180, transform.rotation.eulerAngles.z);}
-        
-        if (Input.GetKeyDown(KeyCode.D)){transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);}
-        */
+        if (Input.GetKey(KeyCode.S)){ 
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoS, 10.0f * Time.deltaTime); 
+        }
     }
     public void DanoSimples()
     {
         //vidas = vidas - 1;
         navePorcentagem = navePorcentagem - 5;
 
-        if (navePorcentagem < 1){
+        if (navePorcentagem < 1)
+        {
             Destroy(this.gameObject);
         }
     }
-
 }
