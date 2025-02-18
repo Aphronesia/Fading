@@ -55,7 +55,6 @@ public class Nave_Move : MonoBehaviour
             default:
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotationZero, 10.0f * Time.deltaTime);
             break;
-
         }
     }
 
