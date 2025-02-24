@@ -16,7 +16,7 @@ public class Nave_Move : MonoBehaviour
     Vector2 moveDirection = Vector2.zero;
 
     private Quaternion rotationZero, rotationN, RotationS;
-    public float movedirectiony;
+    public float moveDirectiony;
 
     private void Awake() {
         naveControls = new NaveInputActions();
@@ -35,7 +35,8 @@ public class Nave_Move : MonoBehaviour
     private void FixedUpdate(){
         Moviment();
         Rotation();
-        movedirectiony = moveDirection.y;
+        moveDirectiony = moveDirection.y;
+        moveDirectiony = moveDirection.y;
     }
     private void Moviment(){
         moveDirection = move.ReadValue<Vector2>();

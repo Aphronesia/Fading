@@ -783,7 +783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 513257135}
   - component: {fileID: 513257134}
-  - component: {fileID: 513257138}
+  - component: {fileID: 513257145}
   - component: {fileID: 513257144}
   - component: {fileID: 513257143}
   - component: {fileID: 513257139}
@@ -865,25 +865,6 @@ Transform:
   - {fileID: 993929344}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &513257138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513257132}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b40dfaaa05b3d1f41ba011a3f922913f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidade: 10
-  entradaHorizontal: 0
-  entradaVertical: 0
-  Dardo: {fileID: 2661806465780660862, guid: acfbdcf29f0a38145b52ce7001540432, type: 3}
-  tempoDeDisparo: 0.3
-  podeDisparar: 0
-  navePorcentagem: 100
 --- !u!50 &513257139
 Rigidbody2D:
   serializedVersion: 4
@@ -1160,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  movedirectiony: 0
+  moveDirectiony: 0
 --- !u!114 &513257144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,6 +1156,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 2661806465780660862, guid: acfbdcf29f0a38145b52ce7001540432, type: 3}
   countdown: 0.3
+--- !u!114 &513257145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513257132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8adf0250fff3a4689a1c130b9f8a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NaveIntegrity: 100
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,10 +2407,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3104,7 +3098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 513257135}
-  speed: 0
+  speed: 10
   maxLimitX: 28
   minLimitX: -28
   maxLimitY: 7.8

@@ -30,7 +30,7 @@ public class Disparo : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //falar no console
-        Debug.Log("O objeto " + name + " colidiu com o objeto " + other.name);
+        //Debug.Log("O objeto " + name + " colidiu com o objeto " + other.name);
 
         //se a colisão for da tag dardo 
         if ( other.tag == "Inimigo")
