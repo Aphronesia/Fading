@@ -7,15 +7,9 @@ public class Player_Move : MonoBehaviour
 {
     [Header("Atributos do Player")]
     [SerializeField, Tooltip("Velocidade de movimento horizontal")]
-    private float speed;
-    
-    private GameObject ferlemou;
-    
-    
-    
+    private float speed; 
     [SerializeField, Tooltip("Força do pulo")]
-    
-    
+
     private float jumpForce;
 
     private bool isGrounded;
