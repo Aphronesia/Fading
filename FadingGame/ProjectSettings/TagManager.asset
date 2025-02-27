@@ -8,10 +8,10 @@ TagManager:
   - Trak_black
   - Dardo
   - Borda
-  - Inimigo
   - Ataque
   - Range
   - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX

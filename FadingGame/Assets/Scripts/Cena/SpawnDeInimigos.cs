@@ -12,6 +12,8 @@ public class SpawnDeInimigos : MonoBehaviour
     private GameObject _Montro_verdePrefab;
 
     private float escalaRandom;
+
+    public bool yes;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class SpawnDeInimigos : MonoBehaviour
 
     IEnumerator RotinaGeracaoInimigo()
     {
-        while ( 1==1 )
+        while ( yes == true )
         {
             //spawn trak black
             Instantiate(_Trak_BlackPrefab, new Vector3(Random.Range(-44f,45f),20.17f,0),Quaternion.identity);

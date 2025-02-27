@@ -33,7 +33,7 @@ public class Disparo : MonoBehaviour
         //Debug.Log("O objeto " + name + " colidiu com o objeto " + other.name);
 
         //se a colisão for da tag dardo 
-        if ( other.tag == "Inimigo")
+        if ( other.tag == "Enemy")
         {
             Destroy(this.gameObject);
             Destroy(other.gameObject);
